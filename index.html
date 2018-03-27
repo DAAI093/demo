@@ -1556,7 +1556,7 @@
         .app-routers-activity-health-Landing__moneyModel--2i3E7 .app-routers-activity-health-Landing__main--1HXpU .app-routers-activity-health-Landing__odd--2JVmo span,
         .app-routers-activity-health-Landing__moneyModel--2i3E7 .app-routers-activity-health-Landing__main--1HXpU .app-routers-activity-health-Landing__even--1ZZyL span {
             display: inline-block;
-            width: 33.3333%;
+            width: 32.3333%;
         }
 
         .app-routers-activity-health-Landing__sharetips--2QTUa {
@@ -1689,7 +1689,7 @@
                                 <span class="app-routers-activity-health-Landing__qi--2nfx4">起</span>
                             </span>
                             <!-- 查看保费控制模态框的display 再写一个底部的js -->
-                            <span class="app-routers-activity-health-Landing__right--14qpG" style="cursor: default;">查看保费</span>
+                            <span class="app-routers-activity-health-Landing__right--14qpG mtk" style="cursor: default;">查看保费</span>
                         </div>
                     </div>
                     <!-- tab栏 遍历 事件定位style="position: fixed;" health-tab多加id不行-->
@@ -1803,12 +1803,12 @@
                                 <div class="app-routers-activity-health-Landing__mainfest--9snk7">
                                     <div class="app-routers-activity-health-Landing__fixed--2emtM">
                                         <span class="app-routers-activity-health-Landing__close--2X7qN">
-                                            <img src="https://weixin.95303.com/wx/assets/close-838b6fa4.png" class="app-routers-activity-health-Landing__close--2X7qN">
+                                            <img src="https://weixin.95303.com/wx/assets/close-838b6fa4.png" class="app-routers-activity-health-Landing__close--2X7qN caca">
                                         </span>
                                         <div class="app-routers-activity-health-Landing__title--3Q46w">查看保费</div>
                                         <div class="app-routers-activity-health-Landing__ftitle--3zFmm bottom-line">
                                             <span>年龄</span>
-                                            <span>有社保</span>
+                                            <span style="width: 154px;">有社保</span>
                                             <span>无社保</span>
                                         </div>
                                     </div>
@@ -1885,6 +1885,14 @@
 </body>
 <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 <script>
+    // 模态框
+    $(".mtk").click(function(){
+        $("#modelMoney").css({"display":"block"})
+    })
+    $(".caca").click(function(){
+        $("#modelMoney").css({"display":"none"})
+    })
+
     //tab栏目定位  滚动到某处定位在那里
     $(function () {
         // var nav = $(".one"); //得到导航对象
@@ -1927,7 +1935,7 @@
             $(".btn2").removeClass("app-routers-activity-health-Landing__active--2pAq-")
             $(".btn3").removeClass("false").addClass(
                 "app-routers-activity-health-Landing__active--2pAq-").siblings().addClass("false")
-            $(document).scrollTop(2400)
+            $(document).scrollTop(2290)
         })
         // 轮播图部分
         var curindex = 0;
