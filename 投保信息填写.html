@@ -1222,7 +1222,7 @@
 </head>
 <body>
     <div id="react">
-        <div data-reactroot="" class="noSelect">
+        <div data-reactroot="" class="noSelect" style="position: relative;">
             <div>
                 <div class="app-components-common-Header__this--2FQm- app-components-common-Header__white--2FLSx">
                     <div class="app-components-common-Header__center--Rz9rI bottom-line">投保信息填写</div>
@@ -1376,9 +1376,8 @@
                 </div>
             </div>
             <!-- 模态框 请完善您的信息 -->
-            <div class="ljtb" style="display:none">
-
-                <span style="color:#ffffff;">
+            <div class="ljtb" style="display:none;background:#000;border-width: 1px; width: 3.2rem; height: 0.96rem;text-align: center; font-size: 0.34rem; border-radius: 5px;position:absolute;left:25%;top:50%">
+                <span style="color:#ffffff;line-height:0.96rem">
                     请完善您的信息
                 </span>
             </div>
@@ -1438,6 +1437,15 @@
         $(".gouxuan2").click(function(){
             $(".gouxuan1").toggle()
             $(".gouxuan2").toggle()
+        })
+        // 最后的确认模态框 淡入淡出
+        $(".btncomp").click(function(){
+            setTimeout(() => {
+                // $(".ljtb").css({ "display": "none" })
+                $(".ljtb").fadeOut()
+            }, 1500);
+            //  $(".ljtb").css({ "display": "block" })
+             $(".ljtb").fadeIn()
         })
     </script>
 </body>
