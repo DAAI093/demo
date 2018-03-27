@@ -1693,8 +1693,8 @@
                             <span class="app-routers-activity-health-Landing__right--14qpG" style="cursor: default;">查看保费</span>
                         </div>
                     </div>
-                    <!-- tab栏 遍历 事件定位style="position: fixed;" -->
-                    <div class="app-routers-activity-health-Landing__tab--Gyt9E app-routers-activity-health-Landing__fixedTab--2pPRm false" id="health-tab weektab">
+                    <!-- tab栏 遍历 事件定位style="position: fixed;" health-tab多加id不行-->
+                    <div class="app-routers-activity-health-Landing__tab--Gyt9E app-routers-activity-health-Landing__fixedTab--2pPRm" id="weektab">
                         <span class="app-routers-activity-health-Landing__active--2pAq- btn1" style="cursor: default;">产品详情</span>
                         <span class="false btn2" style="cursor: default;">产品对比</span>
                         <span class="false btn3" style="cursor: default;">案例详情</span>
@@ -1901,6 +1901,7 @@
                 $("#weektab").css({
                     "position": "fixed"
                 });
+                // $("#weektab").addClass("fix")
                 // $("#weektab").addClass("fix");
             } else {
                 console.log("----")
