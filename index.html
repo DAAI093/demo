@@ -23,6 +23,10 @@
             text-decoration: none;
         }
 
+        .fix {
+            position: fixed;
+        }
+
         .loading {
             position: fixed;
             top: 0;
@@ -1689,11 +1693,11 @@
                             <span class="app-routers-activity-health-Landing__right--14qpG" style="cursor: default;">查看保费</span>
                         </div>
                     </div>
-                    <!-- tab栏 遍历 事件定位 -->
-                    <div class="app-routers-activity-health-Landing__tab--Gyt9E app-routers-activity-health-Landing__fixedTab--2pPRm false" id="health-tab weektab" style="position: fixed;">
-                        <span class="app-routers-activity-health-Landing__active--2pAq-" style="cursor: default;">产品详情</span>
-                        <span class="false" style="cursor: default;">产品对比</span>
-                        <span class="false" style="cursor: default;">案例详情</span>
+                    <!-- tab栏 遍历 事件定位style="position: fixed;" -->
+                    <div class="app-routers-activity-health-Landing__tab--Gyt9E app-routers-activity-health-Landing__fixedTab--2pPRm false" id="health-tab weektab">
+                        <span class="app-routers-activity-health-Landing__active--2pAq- btn1" style="cursor: default;">产品详情</span>
+                        <span class="false btn2" style="cursor: default;">产品对比</span>
+                        <span class="false btn3" style="cursor: default;">案例详情</span>
                     </div>
                     <!-- 这里是第一个的定位位置 -->
                     <div id="weekcon">
@@ -1885,69 +1889,94 @@
 <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 <script>
     //tab栏目定位  滚动到某处定位在那里
-    
-
-
-    // tab栏部分切换
-    // function week_init() {
-    //     $("#weektab span").each(function (i) {
-    //         $(this).click(function () { week_click(i); }).hover(function () { $(this).addClass('hover'); }, function (event) { $(this).removeClass('hover'); });
-    //     });
-    // }
-    // function week_click(num) {
-    //     $("#weektab span").removeClass('on').eq(num).addClass('on');
-    //     $curdl = $("#weekcon #dl").eq(num);
-    //     var posi = $curdl.position();
-    //     $("#weekcon").animate({ scrollTop: posi.top }, 200);
-    // }
-    // $(function () {
-    //     week_init();
-    // });
-    // 轮播图部分
-    var curindex = 0;
-
-    function play() {
-        $("#list i").eq(curindex).addClass("current").siblings().removeClass("current");
-        var target = $("#imglist li").width() * curindex //目标值是当前一张图片的宽度乘以圆点的索引值；
-        $("#imglist").animate({
-            left: -target + "px"
+    $(function () {
+        // var nav = $(".one"); //得到导航对象
+        // var win = $(window); //得到窗口对象
+        // var sc = $(document); //得到document文档对象。
+        $(window).scroll(function () {
+            if ($(document).scrollTop() >= 600) {
+                // console.log($(document).scrollTop())
+                // console.log($("#weektab").attr)
+                console.log("+++")
+                $("#weektab").css({
+                    "position": "fixed"
+                });
+                // $("#weektab").addClass("fix");
+            } else {
+                console.log("----")
+                $("#weektab").css({
+                    "position": "relative"
+                });
+            }
+        });
+       // tab栏部分切换
+        $(".btn1").click(function () {
+            console.log("1")
+             $(".btn2").removeClass("app-routers-activity-health-Landing__active--2pAq-")
+             $(".btn3").removeClass("app-routers-activity-health-Landing__active--2pAq-")
+             $(".btn1").addClass("app-routers-activity-health-Landing__active--2pAq-")
+            $(document).scrollTop(600)
         })
-    }
-    $("#list i").mouseover(function () {
-        curindex = $(this).index();
-        play();
-    })
-    //左右箭头
-    $(".arrow-right").click(function () {
-        if (curindex == 3) {
-            curindex = 0;
-            $("#imglist").css({
-                left: 0
-            });
-        }
-        curindex++;
-        if (curindex == 3) { //圆点和第七张图片关联！！
-            $("#list i").eq(0).addClass("current").siblings().removeClass("current");
-        } else {
+        $(".btn2").click(function () {
+            $(".btn1").removeClass("app-routers-activity-health-Landing__active--2pAq-")
+            $(".btn3").removeClass("app-routers-activity-health-Landing__active--2pAq-")
+            $(".btn2").removeClass("false").addClass(
+                "app-routers-activity-health-Landing__active--2pAq-").siblings().addClass("false")
+            $(document).scrollTop(1500)
+        })
+        $(".btn3").click(function () {
+            $(".btn1").removeClass("app-routers-activity-health-Landing__active--2pAq-")
+            $(".btn2").removeClass("app-routers-activity-health-Landing__active--2pAq-")
+            $(".btn3").removeClass("false").addClass(
+                "app-routers-activity-health-Landing__active--2pAq-").siblings().addClass("false")
+            $(document).scrollTop(2400)
+        })
+        // 轮播图部分
+        var curindex = 0;
+
+        function play() {
             $("#list i").eq(curindex).addClass("current").siblings().removeClass("current");
+            var target = $("#imglist li").width() * curindex //目标值是当前一张图片的宽度乘以圆点的索引值；
+            $("#imglist").animate({
+                left: -target + "px"
+            })
         }
-        var target = $("#imglist li").width() * curindex //目标值是当前一张图片的宽度乘以圆点的索引值；
-        $("#imglist").animate({
-            left: -target + "px"
+        $("#list i").mouseover(function () {
+            curindex = $(this).index();
+            play();
         })
-    })
-    //设置定时器
-    var timer = setInterval(function () {
-        $(".arrow-right").click();
-    }, 1000);
-    $("#box").mouseover(function () {
-        clearInterval(timer);
-    })
-    $("#box").mouseout(function () {
-        timer = setInterval(function () {
+        //左右箭头
+        $(".arrow-right").click(function () {
+            if (curindex == 3) {
+                curindex = 0;
+                $("#imglist").css({
+                    left: 0
+                });
+            }
+            curindex++;
+            if (curindex == 3) { //圆点和第七张图片关联！！
+                $("#list i").eq(0).addClass("current").siblings().removeClass("current");
+            } else {
+                $("#list i").eq(curindex).addClass("current").siblings().removeClass("current");
+            }
+            var target = $("#imglist li").width() * curindex //目标值是当前一张图片的宽度乘以圆点的索引值；
+            $("#imglist").animate({
+                left: -target + "px"
+            })
+        })
+        //设置定时器
+        var timer = setInterval(function () {
             $(".arrow-right").click();
         }, 1000);
-    })
+        $("#box").mouseover(function () {
+            clearInterval(timer);
+        })
+        $("#box").mouseout(function () {
+            timer = setInterval(function () {
+                $(".arrow-right").click();
+            }, 1000);
+        })
+    });
 </script>
 <!-- <script src="//api.map.baidu.com/api?v=2.0&amp;ak=YRh4EoKiXRPRLHgOXR0cCE461QCCW2HS"></script> -->
 <!-- <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=YRh4EoKiXRPRLHgOXR0cCE461QCCW2HS&amp;services=&amp;t=20180323171755"></script> -->
