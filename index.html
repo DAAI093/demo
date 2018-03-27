@@ -10,6 +10,7 @@
         a {
             text-decoration: none;
         }
+
         a:visited {
             text-decoration: none;
         }
@@ -17,6 +18,7 @@
         a:link {
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: none;
         }
@@ -1688,102 +1690,85 @@
                         </div>
                     </div>
                     <!-- tab栏 遍历 事件定位 -->
-                    <div class="app-routers-activity-health-Landing__tab--Gyt9E app-routers-activity-health-Landing__fixedTab--2pPRm false" id="health-tab">
+                    <div class="app-routers-activity-health-Landing__tab--Gyt9E app-routers-activity-health-Landing__fixedTab--2pPRm false" id="health-tab weektab" style="position: fixed;">
                         <span class="app-routers-activity-health-Landing__active--2pAq-" style="cursor: default;">产品详情</span>
                         <span class="false" style="cursor: default;">产品对比</span>
                         <span class="false" style="cursor: default;">案例详情</span>
                     </div>
-                    <img src="https://weixin.95303.com/wx/assets/xjb-e55ba620.png" id="cgxjb" style="margin-top: 0.0rem;">
-                    <!-- 这里的上面的rem很奇怪为0.9 -->
-                    <div class="app-routers-activity-health-Landing__rrbb--3BZPI">
-                        <img src="https://weixin.95303.com/wx/assets/bzdb-91541eb1.png" id="cpdb">
-                        <div class="app-routers-activity-health-Landing__pdf--pnEKC">
-                            <!-- react-text: 34 -->查看
-
-                            <span>
-                                <a href="./投保须知.html">
-                                    《投保须知》</a>
-                            </span>
-                            <!-- react-text: 36 -->&nbsp;
-
-                            <span>
-                                <a href="./保险条款.html">
-                                    《保险条款》</a>
-                            </span>
+                    <!-- 这里是第一个的定位位置 -->
+                    <div id="weekcon">
+                        <div id="dl">
+                            <img src="https://weixin.95303.com/wx/assets/xjb-e55ba620.png" id="cgxjb" style="margin-top: 0.0rem;">
                         </div>
-                    </div>
-                    <div class="app-routers-activity-health-Landing__rrbb--3BZPI">
-                        <img src="https://weixin.95303.com/wx/assets/lp-7e38f7c3.png">
-                        <div class="app-routers-activity-health-Landing__pdf--pnEKC">
-                            <!-- react-text: 41 -->更多理赔详情，请
-
-                            <span style="cursor:default;">
-                                <a href="./理赔流程.html">
-                                    点击查看
-                                </a>
-                            </span>
+                        <!-- 这里的上面的rem很奇怪为0.9 -->
+                        <!-- 这里是产品对比的位置 -->
+                        <div id="dl">
+                            <div class="app-routers-activity-health-Landing__rrbb--3BZPI">
+                                <img src="https://weixin.95303.com/wx/assets/bzdb-91541eb1.png" id="cpdb">
+                                <div class="app-routers-activity-health-Landing__pdf--pnEKC">
+                                    <!-- react-text: 34 -->查看
+                                    <span>
+                                        <a href="./投保须知.html">
+                                            《投保须知》</a>
+                                    </span>
+                                    <!-- react-text: 36 -->&nbsp;
+                                    <span>
+                                        <a href="./保险条款.html">
+                                            《保险条款》</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="app-routers-activity-health-Landing__rrbb--3BZPI">
+                                <img src="https://weixin.95303.com/wx/assets/lp-7e38f7c3.png">
+                                <div class="app-routers-activity-health-Landing__pdf--pnEKC">
+                                    <!-- react-text: 41 -->更多理赔详情，请
+                                    <span style="cursor:default;">
+                                        <a href="./理赔流程.html">
+                                            点击查看
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div id="bzal box">
-                        <!-- 这里的轮播图部分需要再进一步修改 -->
-                        <!-- <div class="swiper-container swiper-container-horizontal">
-                            <div class="swiper-wrapper" style="">
-                                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" style="width: 450px;">
-                                    <img src="https://weixin.95303.com/wx/assets/case3-54b10645.png">
+                        <!-- 这里是案例详情的位置 -->
+                        <!-- 轮播图 -->
+                        <div id="bzal box dl">
+                            <div class="inner" id="inner">
+                                <ul id="imglist">
+                                    <li>
+                                        <a href="#">
+                                            <img src="https://weixin.95303.com/wx/assets/case3-54b10645.png" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="https://weixin.95303.com/wx/assets/case1-868de439.png" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="https://weixin.95303.com/wx/assets/case2-570b5f56.png" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="https://weixin.95303.com/wx/assets/case3-54b10645.png" alt="">
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="list" id="list">
+                                    <i class="current"></i>
+                                    <i></i>
+                                    <i></i>
                                 </div>
-                                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0" style="width: 450px;">
-                                    <img src="https://weixin.95303.com/wx/assets/case1-868de439.png">
+                                <div class="arrow">
+                                    <span class="arrow-left"></span>
+                                    <span class="arrow-right"></span>
                                 </div>
-                                <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="1" style="width: 450px;">
-                                    <img src="https://weixin.95303.com/wx/assets/case2-570b5f56.png">
-                                </div>
-                                <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2" style="width: 450px;">
-                                    <img src="https://weixin.95303.com/wx/assets/case3-54b10645.png">
-                                </div>
-                                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" style="width: 450px;">
-                                    <img src="https://weixin.95303.com/wx/assets/case1-868de439.png">
-                                </div>
-                            </div>
-                            <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
-                                <span class="swiper-pagination-bullet"></span>
-                                <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
-                                <span class="swiper-pagination-bullet"></span>
-                            </div>
-                        </div> -->
-                        <div class="inner" id="inner">
-                            <ul id="imglist">
-                                <li>
-                                    <a href="#">
-                                        <img src="https://weixin.95303.com/wx/assets/case3-54b10645.png" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="https://weixin.95303.com/wx/assets/case1-868de439.png" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="https://weixin.95303.com/wx/assets/case2-570b5f56.png" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="https://weixin.95303.com/wx/assets/case3-54b10645.png" alt="">
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="list" id="list">
-                                <i class="current"></i>
-                                <i></i>
-                                <i></i>
-                            </div>
-                            <div class="arrow">
-                                <span class="arrow-left"></span>
-                                <span class="arrow-right"></span>
                             </div>
                         </div>
                     </div>
+                    <!-- 更多 -->
                     <div class="app-routers-activity-health-Landing__rrbb--3BZPI">
                         <img src="https://weixin.95303.com/wx/assets/wt-d6bbc3ca.png">
                         <div class="app-routers-activity-health-Landing__pdf--pnEKC">
@@ -1899,6 +1884,25 @@
 <script type="text/javascript" async="" src="https://buried.95303.com/js/stt.js?v=1.0"></script>
 <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 <script>
+    //tab栏目定位  滚动到某处定位在那里
+    
+
+
+    // tab栏部分切换
+    // function week_init() {
+    //     $("#weektab span").each(function (i) {
+    //         $(this).click(function () { week_click(i); }).hover(function () { $(this).addClass('hover'); }, function (event) { $(this).removeClass('hover'); });
+    //     });
+    // }
+    // function week_click(num) {
+    //     $("#weektab span").removeClass('on').eq(num).addClass('on');
+    //     $curdl = $("#weekcon #dl").eq(num);
+    //     var posi = $curdl.position();
+    //     $("#weekcon").animate({ scrollTop: posi.top }, 200);
+    // }
+    // $(function () {
+    //     week_init();
+    // });
     // 轮播图部分
     var curindex = 0;
 
@@ -1936,7 +1940,6 @@
     var timer = setInterval(function () {
         $(".arrow-right").click();
     }, 1000);
-
     $("#box").mouseover(function () {
         clearInterval(timer);
     })
